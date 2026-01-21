@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>AI Thumbnail Gen</h1>
+  <input id="prompt" placeholder="YouTube title">
+  <button onclick="generate()">Generate</button>
+  <img id="result">
+  <script>
+    async function generate() {
+      const prompt = document.getElementById('prompt').value;
+      // Replika API key kasnije
+      document.getElementById('result').src = 'https://api.replicate.com/...';
+    }
+  </script>
+</body>
+</html>
