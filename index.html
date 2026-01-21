@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>AI Thumbnails - DreamSoftAI</title>
+  <style>
+    body { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; max-width:800px; margin:0 auto; padding:40px 20px; }
+    input { width:100%; padding:20px; font-size:18px; border:2px solid #eee; border-radius:12px; box-sizing:border-box; }
+    button { width:100%; padding:20px; background:#667eea; color:white; font-size:20px; border:none; border-radius:12px; margin-top:15px; cursor:pointer; }
+    #result { width:100%; max-width:512px; margin-top:30px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.2); display:none; }
+    .pro { text-align:center; color:#666; margin-top:20px; }
+  </style>
+</head>
 <body>
-  <h1>AI Thumbnail Gen</h1>
-  <input id="prompt" placeholder="YouTube title">
-  <button onclick="generate()">Generate</button>
+  <h1 style="text-align:center;color:#333;">🤖 AI Thumbnail Generator</h1>
+  <p style="text-align:center;color:#666;">Enter YouTube title → Instant thumbnail | Free 5/day</p>
+  
+  <input id="prompt" placeholder="e.g. 'Build SaaS with Supabase Tutorial'">
+  <button onclick="generate()">Generate Thumbnail</button>
+  
   <img id="result">
+  <div class="pro">
+    <p>Pro: Unlimited + Custom styles €9/month</p>
+    <a href="https://dreamsoftai.com/lumio" style="background:#ff6b6b;color:white;padding:12px 24px;text-decoration:none;border-radius:8px;">Build SaaS → Lumio</a>
+  </div>
+  
   <script>
     async function generate() {
-      const prompt = document.getElementById('prompt').value;
-      // Replika API key kasnije
-      document.getElementById('result').src = 'https://api.replicate.com/...';
+      const prompt = document.getElementById('prompt').value || 'AI Thumbnail';
+      document.getElementById('result').src = `https://via.placeholder.com/512x288/667eea/ffffff?text=${encodeURIComponent(prompt.substring(0,20))}`;
+      document.getElementById('result').style.display = 'block';
     }
+    // Replika AI kasnije: fetch('https://api.replicate.com/v1/predictions', {api_key})
   </script>
 </body>
 </html>
